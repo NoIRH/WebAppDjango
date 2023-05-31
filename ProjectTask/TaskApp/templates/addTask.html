@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block page_title %}
+Task add
+{% endblock page_title %}
+{% block header %}
+Добавить дело
+{% endblock header %}
+{% block content %}
+<form method="post" action="addTask">
+    {% csrf_token %}
+    <fieldset>
+        <div class='about'>
+            <input name="task" type='text' id='task_form' placeholder="Введите задачу">
+        </div>
+        <input type='submit' value="Cохранить">
+    </fieldset>
+</form>
+{% endblock content %}
+    

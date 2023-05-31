@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block page_title %}
+Task list
+{% endblock page_title %}
+{% block header %}
+Список дел
+{% endblock header %}
+{% block content %}
+{% if listTasks%}
+    <ul>
+        {% for task in listTasks %}
+        <li> {{task.task}} <a href = "updateTask/{{task.id}}">(редактировать)</a> ---- <a href = "deleteTask/{{task.id}}">(удалить)</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>
+        Список дел пуст
+    </p>
+    {% endif %}
+{% endblock content %}
+    
+
